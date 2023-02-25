@@ -28,7 +28,6 @@ const PropertyCard = ({
           boxShadow: "0 22px 45px 2px rgba(176, 176, 176, 0.1)",
         },
         cursor: "pointer",
-        textDecoration: "none",
       }}
       elevation={0}
     >
@@ -47,7 +46,7 @@ const PropertyCard = ({
           justifyContent: "space-between",
           gap: "10px",
           padding: "5px",
-          marginTop:"5px"
+          marginTop: "5px",
         }}
       >
         <Stack direction="column" gap={1}>

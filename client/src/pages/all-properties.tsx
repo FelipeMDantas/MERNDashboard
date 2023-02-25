@@ -119,6 +119,20 @@ const AllProperties = () => {
                 }}
               >
                 <MenuItem value="">All</MenuItem>
+                {[
+                  "Apartment",
+                  "Villa",
+                  "Farmhouse",
+                  "Condos",
+                  "Townhouse",
+                  "Duplex",
+                  "Studio",
+                  "Chalet",
+                ].map((type) => (
+                  <MenuItem key={type} value={type.toLowerCase()}>
+                    {type}
+                  </MenuItem>
+                ))}
               </Select>
             </Box>
           </Box>
@@ -181,6 +195,9 @@ const AllProperties = () => {
             required
             inputProps={{ "aria-label": "Without label" }}
             defaultValue={10}
+            onChange={(e) =>
+              setPageSize(e.target.value ? Number(e.target.value) : 10)
+            }
           >
             {[10, 20, 30, 40, 50].map((size) => (
               <MenuItem value={size} key={size}>
