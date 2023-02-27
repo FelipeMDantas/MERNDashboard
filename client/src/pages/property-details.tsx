@@ -30,7 +30,7 @@ const PropertyDetails = () => {
   /*const { queryResult } = useShow();*/
 
   const { data, isLoading, isError } = useOne({
-    resource: "api/v1/properties",
+    resource: "properties",
     id: id as string,
   });
 
@@ -42,7 +42,9 @@ const PropertyDetails = () => {
   const isCurrentUser = user.email === propertyDetails.creator.email;
 
   const handleDeleteProperty = () => {
-    const response = window.confirm("Are you sure you want to delete this property?");
+    const response = window.confirm(
+      "Are you sure you want to delete this property?"
+    );
 
     if (response) {
       mutate(
@@ -93,7 +95,8 @@ const PropertyDetails = () => {
               alignItems="center"
             >
               <Typography fontSize={18} fontWeight={500} color="#11142d">
-                {propertyDetails.propertyType}
+                {propertyDetails.propertyType.charAt(0).toUpperCase() +
+                  propertyDetails.propertyType.slice(1)}
               </Typography>
               <Box>
                 {[1, 2, 3, 4, 5].map((star) => (
@@ -102,34 +105,6 @@ const PropertyDetails = () => {
               </Box>
             </Stack>
 
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              flexWrap="wrap"
-              alignItems="center"
-            >
-              <Box>
-                <Typography
-                  fontSize={22}
-                  fontWeight={600}
-                  color="#11142d"
-                  textTransform="capitalize"
-                >
-                  {propertyDetails.title}
-                </Typography>
-                <Stack mt={0.5} direction="row" alignItems="center" gap={0.5}>
-                  <Place sx={{ color: "#808191" }} />
-                  <Typography fontSize={14} color="#808191">
-                    {propertyDetails.location}
-                  </Typography>
-                </Stack>
-              </Box>
-              <Box>
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={`star-${star}`} sx={{ color: "#f2c94c" }} />
-                ))}
-              </Box>
-            </Stack>
             <Stack
               direction="row"
               flexWrap="wrap"
