@@ -48,6 +48,7 @@ const AgentCard = ({
         width={90}
         height={90}
         style={{ borderRadius: 8, objectFit: "cover" }}
+        referrerPolicy="no-referrer"
       />
       <Stack
         direction="column"
