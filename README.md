@@ -12,6 +12,10 @@
 
 > A MERN application that provides its users with Google authentication, chart visualizations, and insertion, update and deletion of textual and visual records related to varietes of real estates.
 
+### Take a look at the page
+
+<img src = images/page_gif.gif>
+
 ## Tech
 
 A couple of technologies were employed in this project. Among them:
